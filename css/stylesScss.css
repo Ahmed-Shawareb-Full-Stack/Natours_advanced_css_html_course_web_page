@@ -1,0 +1,189 @@
+html {
+  font-size: 62.5%;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem;
+  box-sizing: border-box;
+}
+body header.header {
+  background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  height: 95vh;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+}
+body header.header .header__logo-box {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+}
+body header.header .header__logo-box img.header__logo {
+  height: 3.5rem;
+}
+body header.header .header__text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+body header.header .header__text-box .header__text {
+  margin-bottom: 8rem;
+}
+body header.header .header__text-box .header__text span.header__text--main {
+  font-size: 6rem;
+  color: #fff;
+  letter-spacing: 3rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  display: block;
+  -webkit-animation: moveInLeft 1s ease-out;
+          animation: moveInLeft 1s ease-out;
+}
+body header.header .header__text-box .header__text span.header__text--sub {
+  display: block;
+  color: #fff;
+  letter-spacing: 1.8rem;
+  font-weight: 700;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  -webkit-animation: moveInRight 1s ease-out;
+          animation: moveInRight 1s ease-out;
+}
+body header.header .header__text-box a.btn:link, body header.header .header__text-box a.btn:visited {
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 1.5rem 4rem;
+  border-radius: 10rem;
+  transition: all 0.25s;
+  position: relative;
+  font-size: 1.5rem;
+}
+body header.header .header__text-box a.btn::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 10rem;
+  transition: all 0.5s;
+}
+body header.header .header__text-box a.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+body header.header .header__text-box a.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+body header.header .header__text-box a.btn:hover::after {
+  transform: scaleX(1.6) scaleY(1.4);
+  opacity: 0;
+}
+body header.header .header__text-box .btn--white {
+  background-color: #fff;
+  color: #777;
+}
+body header.header .header__text-box .btn--white::after {
+  background-color: #fff;
+}
+body header.header .header__text-box .btn--animated {
+  -webkit-animation: moveInUp 0.5s ease-out;
+          animation: moveInUp 0.5s ease-out;
+  -webkit-animation-delay: 0.75s;
+          animation-delay: 0.75s;
+  -webkit-animation-fill-mode: backwards;
+          animation-fill-mode: backwards;
+}
+
+@-webkit-keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@-webkit-keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@-webkit-keyframes moveInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(7.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(7.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}/*# sourceMappingURL=stylesScss.css.map */

@@ -1,0 +1,196 @@
+/////////////////
+// *Variables* //
+/////////////////
+$color-primary: #7ed56f; //light green
+$color-primary-light: #55c57a; //medium green
+$color-primary-dark: #28b485; //dark green
+
+$color-grey-dark: #777;
+$color-white: #fff;
+$color-black: #000;
+
+/////////////
+// General //
+/////////////
+
+html {
+  font-size: 62.5%;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// ** ─── Start Header ─────────────────────────────────────────────────────────────── * //
+///////////////////////////////////////////////////////////////////////////////////////////
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem;
+  box-sizing: border-box;
+
+  header.header {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)
+      ),
+      url(../img/hero.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    height: 95vh;
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+
+    .header__logo-box {
+      position: absolute;
+      top: 4rem;
+      left: 4rem;
+
+      img.header__logo {
+        height: 3.5rem;
+      }
+    }
+
+    .header__text-box {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+
+      .header__text {
+        margin-bottom: 8rem;
+
+        span.header__text--main {
+          font-size: 6rem;
+          color: $color-white;
+          letter-spacing: 3rem;
+          font-weight: 400;
+          text-transform: uppercase;
+          display: block;
+          animation: moveInLeft 1s ease-out;
+        }
+
+        span.header__text--sub {
+          display: block;
+          color: $color-white;
+          letter-spacing: 1.8rem;
+          font-weight: 700;
+          font-size: 1.6rem;
+          text-transform: uppercase;
+          animation: moveInRight 1s ease-out;
+        }
+      }
+
+      a.btn {
+        &:link,
+        &:visited {
+          display: inline-block;
+          text-decoration: none;
+          text-transform: uppercase;
+          padding: 1.5rem 4rem;
+          border-radius: 10rem;
+          transition: all 0.25s;
+          position: relative;
+          font-size: 1.5rem;
+        }
+
+        &::after {
+          content: "";
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          border-radius: 10rem;
+          transition: all 0.5s;
+        }
+
+        &:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+        }
+
+        &:active {
+          transform: translateY(-1px);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+        }
+
+        &:hover::after {
+          transform: scaleX(1.6) scaleY(1.4);
+          opacity: 0;
+        }
+      }
+
+      .btn--white {
+        background-color: $color-white;
+        color: #777;
+
+        &::after {
+          background-color: $color-white;
+        }
+      }
+
+      .btn--animated {
+        animation: moveInUp 0.5s ease-out;
+        animation-delay: 0.75s;
+        animation-fill-mode: backwards;
+      }
+    }
+  }
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
+// ** ─── Key Frame ──────────────────────────────────────────────────────────── * //
+/////////////////////////////////////////////////////////////////////////////////////
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(7.5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
